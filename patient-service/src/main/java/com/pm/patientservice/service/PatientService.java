@@ -65,4 +65,17 @@ public class PatientService {
            throw new PatientNotFoundException("Patient not found with ID" + id);
        }
    }
+
+   public PatientResponseDTO deletePatient(UUID id){
+       Optional<Patient> optionalPatient = patientRepository.findById(id);
+
+       if(optionalPatient.isPresent()){
+           Patient patient = optionalPatient.get();
+           patientRepository.delete(patient);
+
+           return PatientMapper.toDTO(patient);
+       } else {
+           throw new PatientNotFoundException("Patient not found with ID " + id);
+       }
+   }
 }

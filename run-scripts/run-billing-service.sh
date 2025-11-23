@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-./billing-service/mvnw -f billing-service/pom.xml clean install -DskipTests
+../billing-service/mvnw -f ../billing-service/pom.xml clean install -DskipTests
 
-docker build -t billing-service ./billing-service
+docker build -t billing-service ../billing-service
 
 docker rm -f billing-service 2>/dev/null
 

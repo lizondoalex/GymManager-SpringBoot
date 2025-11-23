@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-./patient-service/mvnw -f analytics-service/pom.xml clean package -DskipTests
+../analytics-service/mvnw -f ../analytics-service/pom.xml clean package -DskipTests
 
-docker build -t analytics-service ./analytics-service
+docker build -t analytics-service ../analytics-service
 
 docker rm -f analytics-service 2>/dev/null
 

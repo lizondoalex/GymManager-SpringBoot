@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-./patient-service/mvnw -f patient-service/pom.xml clean package -DskipTests
+../patient-service/mvnw -f ../patient-service/pom.xml clean package -DskipTests
 
-docker build -t patient-service ./patient-service
+docker build -t patient-service ../patient-service
 
 docker rm -f patient-service 2>/dev/null
 

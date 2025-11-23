@@ -15,3 +15,5 @@ docker run -d \
 -e KAFKA_CFG_NODE_ID=0 \
 -e KAFKA_CFG_PROCESS_ROLES=controller,broker \
 bitnamilegacy/kafka:latest
+
+echo "End of run-kafka.sh"

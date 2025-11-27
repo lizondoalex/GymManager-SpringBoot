@@ -5,13 +5,17 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: auth-service-route
+          uri: http://auth-service:4005
+          predicates:
+            - Path=/auth/**
+          filters:
+            - StripPrefix=1
+
         - id: patient-service-route
           uri: http://patient-service:4000
           predicates:
-            # 1. Match sub-paths (e.g., /api/patients/123)
             - Path=/api/patients/**
-            # 2. Match the exact list path (e.g., /api/patients)
-            - Path=/api/patients
           filters:
             - StripPrefix=1
 

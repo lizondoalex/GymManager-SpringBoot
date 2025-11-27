@@ -9,7 +9,6 @@ docker rm -f auth-service 2>/dev/null
 docker run -d \
   --name auth-service \
   --network internal \
-  -p 4005:4005 \
   -e SPRING_DATASOURCE_PASSWORD=password \
   -e SPRING_DATASOURCE_URL=jdbc:postgresql://auth-service-db:5432/db \
   -e SPRING_DATASOURCE_USERNAME=admin_user \

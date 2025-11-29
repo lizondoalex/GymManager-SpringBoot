@@ -9,6 +9,7 @@ docker rm -f api-gateway 2>/dev/null
 docker run -d \
   --name api-gateway \
   --network internal \
+  -e AUTH_SERVICE_URL=http://auth-service:4005 \
   -p 4004:4004 \
   api-gateway
 

@@ -1,6 +1,7 @@
 ### UPDATE request to update a patients information
 
-PUT localhost:4000/members/123e4567-e89b-12d3-a456-426614174000
+PUT localhost:4004/members/123e4567-e89b-12d3-a456-426614174000
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {

@@ -1,0 +1,14 @@
+### register request to retrieve token
+
+POST http://localhost:4004/auth/register
+Content-Type: application/json
+
+{
+  "name": "NameOfExample",
+  "password": "testPassword12399",
+  "email": "exampleEMAIL@example.com",
+  "address": "123 main street",
+  "dateOfBirth": "1995-10-10"
+}
+
+> {% client.global.set("token", response.body.token) %}
